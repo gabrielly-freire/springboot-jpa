@@ -1,0 +1,18 @@
+package com.studies.course.resources;
+
+import com.studies.course.entities.User;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping(value = "/users")
+public class UserResource {
+
+    @GetMapping
+    public ResponseEntity<User> findAll(){
+        User user = new User(1L, "maria", "maria@email.com", "8499999", "12334");
+        return ResponseEntity.ok().body(user);
+    }
+}
